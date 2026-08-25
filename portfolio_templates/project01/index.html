@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>Portfolio01</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 50px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            display: flex;
+        }
+
+        nav ul li {
+            margin: 0 20px;
+        }
+
+        button {
+            background-color: #f5c518;
+            color: black;
+            padding: 5px 15px;
+            border: 0;
+            font-weight: 600;
+            border-radius: 5px;
+        }
+
+        #hero {
+            background-image: url("https://www.rafaelkurosawa.com/images/hero-portrait-bleed.png");
+            background-size: 100%;
+            /* background-position: center; */
+            background-position-x: right;
+            background-position-y: top;
+           
+            /* border: 1px solid white; */
+        }
+        #hero section{
+             height: 100vh;
+             padding: 0 50px;
+             display: flex;
+             flex-direction: column;
+             justify-content: center;
+        }
+        #hero section h1 {
+             font-size: 7rem;
+             margin: 0;
+         }
+        #hero section p {
+             font-size: 2rem;
+             margin: 0;
+         }
+         .light-text{
+            font-size: 1.2rem !important;
+            font-weight: lighter;
+            line-height: 1.5;
+            width: 50%;
+            color: rgb(68, 67, 67);
+         }
+    </style>
+</head>
+
+<body>
+    <div id="hero" >
+        <nav>
+            <h4>Ananta Shinde</h4>
+            <ul>
+                <li>home</li>
+                <li>work</li>
+                <li>experience</li>
+                <li>about</li>
+                <li>contact</li>
+                <li><button>lets talk</button></li>
+            </ul>
+        </nav>
+        <section>
+            <p>Hi there,</p>
+             <h1>Web Developer</h1>
+             <p class="light-text">15+ years converting design decisions into ROI, scalability and operational efficiency. Background spans advertising, branding and digital product.</p>
+        </section>
+    </div>
+
+
+    <footer>
+
+    </footer>
+
+</body>
+
+</html>
