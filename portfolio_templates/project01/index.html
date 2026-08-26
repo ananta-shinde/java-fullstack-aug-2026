@@ -42,36 +42,84 @@
             /* background-position: center; */
             background-position-x: right;
             background-position-y: top;
-           
+
             /* border: 1px solid white; */
         }
-        #hero section{
-             height: 100vh;
-             padding: 0 50px;
-             display: flex;
-             flex-direction: column;
-             justify-content: center;
+
+        #hero section {
+            height: 100vh;
+            padding: 0 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
+
         #hero section h1 {
-             font-size: 7rem;
-             margin: 0;
-         }
-        #hero section p {
-             font-size: 2rem;
-             margin: 0;
-         }
-         .light-text{
+            font-size: 7rem;
+            margin: 0;
+        }
+
+        #hero section h2 {
+            font-size: 2rem;
+            font-weight: lighter;
+            margin: 0;
+        }
+
+        .light-text {
             font-size: 1.2rem !important;
             font-weight: lighter;
             line-height: 1.5;
             width: 50%;
             color: rgb(68, 67, 67);
-         }
+        }
+
+        .hero-highlight {
+            font-size: 1.5rem;
+            text-transform: capitalize;
+        }
+
+        .btn-primary {
+            background-color: #f5c518;
+            color: black;
+            font-size: 1.2rem;
+            padding: 10px 30px;
+        }
+
+        .btn-outline-primary {
+            background-color: transparent;
+            color: #f5c518;
+            font-size: 1.2rem;
+            padding: 10px 30px;
+            border: 2px solid #f5c518;
+        }
+
+        .sub-heading {
+            color: #f5c518;
+            margin: 0;
+        }
+
+        .main-heading {
+            font-size: 3rem;
+            margin: 1rem 0;
+            color: #f5c518;
+        }
+
+        .proof-card {
+            border: 1px solid silver;
+            padding: 20px;
+        }
+        .proof-card-container{
+            display: flex;
+            gap: 2rem;
+        }
+        #proof{
+            padding: 100px 50px;
+        }
     </style>
 </head>
 
 <body>
-    <div id="hero" >
+    <div id="hero">
         <nav>
             <h4>Ananta Shinde</h4>
             <ul>
@@ -84,11 +132,43 @@
             </ul>
         </nav>
         <section>
-            <p>Hi there,</p>
-             <h1>Web Developer</h1>
-             <p class="light-text">15+ years converting design decisions into ROI, scalability and operational efficiency. Background spans advertising, branding and digital product.</p>
+            <h2>Hi there,</h2>
+            <h1>Web Developer</h1>
+            <span style="width: 300px;border: 5px solid #f5c518;"></span>
+            <p class="hero-highlight">Fullstack developer | Mobile App developer</p>
+            <p class="light-text">15+ years converting design decisions into ROI, scalability and operational
+                efficiency. Background spans advertising, branding and digital product.</p>
+            <div>
+                <button class="btn-primary">Download CV</button>
+                <button class="btn-outline-primary">View Work</button>
+            </div>
         </section>
     </div>
+    <section id="proof">
+        <h5 class="sub-heading">/numbers</h5>
+        <h1 class="main-heading">By the numbers</h1>
+        <div class="proof-card-container" >
+            <div class="proof-card">
+                <h1 class="main-heading">15+</h1>
+                <h5>years of experience</h5>
+                <p>In product design, art direction and creative leadership — spanning advertising, branding and complex
+                    digital products.</p>
+            </div>
+            <div class="proof-card">
+                <h1 class="main-heading">15+</h1>
+                <h5>years of experience</h5>
+                <p>In product design, art direction and creative leadership — spanning advertising, branding and complex
+                    digital products.</p>
+            </div>
+            <div class="proof-card">
+                <h1 class="main-heading">15+</h1>
+                <h5>years of experience</h5>
+                <p>In product design, art direction and creative leadership — spanning advertising, branding and complex
+                    digital products.</p>
+            </div>
+        </div>
+
+    </section>
 
 
     <footer>
