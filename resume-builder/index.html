@@ -1,42 +1,29 @@
-<html>
-    <head>
-        <title>Resume Builder App</title>
-    </head>
-    <body>
-         <nav style="padding: 20px 100px;background-color: black;color: white;" >
-            <h3 style="vertical-align: middle;display: inline-block;margin:0">ResumeBuider</h3>
-            <input style="vertical-align:middle;width: 500px;margin: 0 0 0 200px;padding: 1rem;" type="text" placeholder="search for query here">
-            <ul style="display: inline-block;margin: 0;list-style-type: none;float: right;vertical-align: middle;">
-                <li style="display: inline-block;">Templates</li>
-                <li style="display: inline-block;">About Us</li>
-                 <li style="display: inline-block;">Login</li>
-            </ul>
-         </nav>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>Resume Builder</title>
+</head>
+<body>
+    <input id="inputName" type="text" placeholder="enter your name"/>
+    <button onclick="updateData()">Save</button>
+    <p id="name" ></p>
+    <label>Choose a color :</label>
+    <input id="color" type="color"/>
+    <button onclick="updatecolor()">update color</button>
+    <script>
+         var username = document.getElementById("inputName")
+         var userdetails = document.getElementById("name")
+         var color = document.getElementById("color")
+        function updateData(){
+            userdetails.innerText = username.value
+        }
 
-         
-         <nav style="display: flex;justify-content: space-between;padding: 20px 100px;align-items: center;">
-            <h3>MyLogo</h3>
-            <div style="width: 50%;">
-                <input style="padding: 1rem;width: 100%;" type="text" placeholder="search...."/>
-            </div>
-            <ul style="display: flex;list-style-type: none;">
-                <li style="margin: 0 10px;">Templates</li>
-                <li style="margin: 0 10px;">About us</li>
-                <li style="margin: 0 10px;">Login</li>
-            </ul>
-         </nav>
-        <main>
-            <!-- --------------------  hero section ------------------------------- -->
-            <section style="display: flex;flex-direction: column;justify-content: center;text-align: center;background-color: lightcyan;height: 500px;">
-                <h1 style="font-size: 3rem;">This is my hero heading<br> for web app</h1>
-                <p style="font-size: 1.2rem;">Lorem ipsum dolor sit amet consectetur adipisicing elit.<br> Aliquid porro explicabo asperiores soluta quam eveniet adipisci</p>
-                <div>
-                    <button style="background-color: black;border: 0;color: white;padding: 10px 30px;font-size: 1.2rem;">Explore more</button>
-                </div>
-            </section>
-        </main>
-        <footer>
+        function updatecolor(){
+            userdetails.style.color = color.value
+        }
 
-        </footer>
-    </body>
+        
+    </script>
+</body>
 </html>
