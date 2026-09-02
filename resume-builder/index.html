@@ -3,27 +3,87 @@
 <head>
     
     <title>Resume Builder</title>
+    <style>
+        .container{
+            padding: 1rem;
+            border:1px solid;
+            width: fit-content;
+        }
+        .form-container{
+            display: flex;
+            flex-direction: column;
+            width: 400px;
+            padding: 1rem;
+            border:1px solid;
+            gap:16px;
+            
+        }
+        .form-container input,textarea{
+            padding: 0.5rem;
+        }
+       
+    </style>
 </head>
 <body>
-    <input id="inputName" type="text" placeholder="enter your name"/>
-    <button onclick="updateData()">Save</button>
-    <p id="name" ></p>
-    <label>Choose a color :</label>
-    <input id="color" type="color"/>
-    <button onclick="updatecolor()">update color</button>
-    <script>
-         var username = document.getElementById("inputName")
-         var userdetails = document.getElementById("name")
-         var color = document.getElementById("color")
-        function updateData(){
-            userdetails.innerText = username.value
-        }
 
-        function updatecolor(){
-            userdetails.style.color = color.value
-        }
-
-        
-    </script>
+    <div class="form-container">
+        <h4>Enter your details to generate ID</h4>
+        <input id="name-input" type="text" placeholder="enter your name ">
+        <input id="email-input" type="email" placeholder="enter your email ">
+        <input id="contact-input" type="number" placeholder="enter your contact ">
+        <input id="bg-input" type="text" placeholder="enter your blood group ">
+        <textarea id="address-input" placeholder="address"></textarea>
+        <input onclick="generateId()" type="submit"/>
+    </div>
+   
+    <div class="container">
+        <table>
+            <tr>
+                <td><strong>Name:</strong></td>
+                <td id="name"></td>
+            </tr>
+            <tr>
+                <td><strong>Email:</strong></td>
+                <td id="email"></td>
+            </tr>
+            <tr>
+                <td><strong>contact:</strong></td>
+                <td id="contact"></td>
+            </tr>
+            <tr>
+                <td><strong>blood group:</strong></td>
+                <td id="blood-group"></td>
+            </tr>
+            <tr>
+                <td><strong>Address:</strong></td>
+                <td id="address"></td>
+            </tr>
+        </table>
+    </div>
+    
 </body>
+<script>  
+    //  reference to input fileds
+    var nameInput = document.getElementById("name-input")
+    var emailInput = document.getElementById("email-input")
+    var contactInput = document.getElementById("contact-input")
+    var bloodInput = document.getElementById("bg-input")
+    var addressInput = document.getElementById("address-input")
+
+    // refernces to data in table
+    var nameData = document.getElementById("name")
+    var emailData = document.getElementById("email")
+    var contactData = document.getElementById("contact")
+    var bloodData = document.getElementById("blood-group")
+    var addressData = document.getElementById("address")
+
+    function generateId(){
+        nameData.innerHTML = nameInput.value
+        emailData.innerHTML = emailInput.value
+        contactData.innerHTML = contactInput.value
+        bloodData.innerHTML = bloodInput.value
+        addressData.innerHTML = addressInput.value
+    }
+
+</script>
 </html>
