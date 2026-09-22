@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body{
+            background-color: black;
+            color: white;
+        }
+        .login-form-container{
+            background-color: white;
+            color: black;
+            padding: 25px;
+            width:400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        section{
+            display: flex;
+            align-items: center;
+            height: 100vh;
+            justify-content: center;
+            gap:20px
+        }
+        input{
+            width: 100%;
+            padding: 10px 20px;
+            box-sizing: border-box;
+            margin: 0.5rem 0;
+
+        }
+        button{
+            width: 100%;
+            padding: 10px 30px;
+            background-color: black;
+            color: white;
+        }
+        h4{
+            text-align: center;
+        }
+        .ad-container{
+            width: 50%;
+            background-color: burlywood;
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <div class="ad-container">
+
+        </div>
+        <div style="width: 50%;">
+            <div class="login-form-container">
+                <h4>Welcome back! Please login</h4>
+                <input type="text" placeholder="username or email"/>
+                <input type="password" placeholder="password"/>
+                <button>Login</button>
+            </div>
+           
+        </div>
+    </section>
+</body>
+</html>
