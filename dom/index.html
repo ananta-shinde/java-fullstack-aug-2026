@@ -8,7 +8,7 @@
         .product-card{
             border: 1px solid;
             padding: 15px;
-            display: none;
+            /* display: none; */
             width: 18rem;
         }
 
@@ -18,19 +18,13 @@
 
     </style>
 </head>
-<body>
-    <button onclick="loadData()">load data</button>
+<body id="">
+   
 
-     <div id="product1" class="product-card"> 
-        <img id="productImage1"  src=""/>
-         <h4 id="name1"></h4>
-         <p id="price1"></p>
+    <div id="main">
+
     </div>
-    <div id="product" class="product-card"> 
-        <img id="productImage"  src=""/>
-         <h4 id="name"></h4>
-         <p id="price"></p>
-    </div>
+   
 
    
 
@@ -38,45 +32,50 @@
 </body>
 <script>
     
-    var productname = "HP 16 series"
-    var category = "laptop"
-    var price = 500
-    var productimage = "https://img.magnific.com/premium-vector/green-cosmetic-spray-bottle-mockup-standing-3d-podium-with-elegant-curved-background-realistic-blank-skincare-beauty-product-packaging-presentation-template-vector-illustration_258787-7784.jpg?semt=ais_hybrid&w=740&q=80"
+     const products = [
+        {
+            title:"Laptop",
+            price:50000,
+            category:"electronics",
+            image :"https://img.magnific.com/premium-vector/green-cosmetic-spray-bottle-mockup-standing-3d-podium-with-elegant-curved-background-realistic-blank-skincare-beauty-product-packaging-presentation-template-vector-illustration_258787-7784.jpg?semt=ais_hybrid&w=740&q=80"
 
-    var productname1 = "HP 17 series"
-    var category1 = "laptop"
-    var price1 = 500
-    var productimage1 = "https://img.magnific.com/premium-vector/green-cosmetic-spray-bottle-mockup-standing-3d-podium-with-elegant-curved-background-realistic-blank-skincare-beauty-product-packaging-presentation-template-vector-illustration_258787-7784.jpg?semt=ais_hybrid&w=740&q=80"
+        },
+        {
+            title:"Mobile",
+            price:40000,
+            category:"electronics",
+            image:"https://img.magnific.com/premium-vector/green-cosmetic-spray-bottle-mockup-standing-3d-podium-with-elegant-curved-background-realistic-blank-skincare-beauty-product-packaging-presentation-template-vector-illustration_258787-7784.jpg?semt=ais_hybrid&w=740&q=80"
 
+        },
+        {
+            title:"Tablet",
+            price:45000,
+            category:"electronics",
+            image:"https://img.magnific.com/premium-vector/green-cosmetic-spray-bottle-mockup-standing-3d-podium-with-elegant-curved-background-realistic-blank-skincare-beauty-product-packaging-presentation-template-vector-illustration_258787-7784.jpg?semt=ais_hybrid&w=740&q=80"
 
-   const values = []
-   values.push(25)
-   values.push(25)
-   values.push(25)
+        },
+        {
+            title:"Tablet",
+            price:45000,
+            category:"electronics",
+            image:"https://img.magnific.com/premium-vector/green-cosmetic-spray-bottle-mockup-standing-3d-podium-with-elegant-curved-background-realistic-blank-skincare-beauty-product-packaging-presentation-template-vector-illustration_258787-7784.jpg?semt=ais_hybrid&w=740&q=80"
 
-   console.log(values)
+        }
+     ]
+   
+    
+    for(i=0;i<products.length;i++){
+        document.getElementById("main").innerHTML = document.getElementById("main").innerHTML +  `<div id="product" class="product-card"> 
+        <img id="productImage"  src="${products[i].image}"/>
+         <h4 id="name">${products[i].title}</h4>
+         <p id="price">${products[i].price}</p>
+        </div>`
+   
+    }
 
-   const data = {}
-   data.age = 25
-   data.weight = 25
-   data.rollno = 25
-
-   console.log(data)
     
 
-
-   function loadData(){
-     // puting data to ui structure
-    document.getElementById("name").innerHTML = productname
-    document.getElementById("price").innerHTML = price
-    document.getElementById("productImage").src = productimage
-    document.getElementById("product").style.display = "block"
-
-    document.getElementById("name1").innerHTML = productname1
-    document.getElementById("price1").innerHTML = price1
-    document.getElementById("productImage1").src = productimage1
-    document.getElementById("product1").style.display = "block"
-   }
+  
 
 </script>
 </html>
