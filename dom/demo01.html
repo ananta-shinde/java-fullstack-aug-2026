@@ -1,0 +1,54 @@
+
+<html lang="en" >
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="" id="name" placeholder="enter your name">
+    <input type="text" name="" id="email" placeholder="enter your email">
+    <select name="" id="city">
+        <option> -- select city --</option>
+        <option>mumbai</option>
+        <option>pune</option>
+    </select>
+   <button onclick="addNewRow()">Add New Row</button>
+   <section id="data-table-container">
+
+   </section>
+   
+</body>
+<script>
+    document.getElementById("data-table-container").innerHTML = `<table>
+        <tr>
+            <th>name</th>
+            <th>email</th>
+            <th>city</th>
+        </tr>
+    </table>`
+    
+    // for(i=0;i<5;i++){
+    // var dataTable = document.getElementsByTagName("table")[0];
+    // dataTable.innerHTML = dataTable.innerHTML + `<tr>
+    //         <td>name</td>
+    //         <td>email</td>
+    //         <td>city</td>
+    //     </tr>`
+    // }
+
+    function addNewRow(){
+         var dataTable = document.getElementsByTagName("table")[0];
+         var name = document.getElementById("name").value
+         var email = document.getElementById("email").value
+         var city = document.getElementById("city").value
+        dataTable.innerHTML = dataTable.innerHTML + `<tr>
+            <td>${name}</td>
+            <td>${email}</td>
+            <td>${city}</td>
+        </tr>`
+    }
+
+   
+
+
+</script>
+</html>
