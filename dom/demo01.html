@@ -4,51 +4,56 @@
     <title>Document</title>
 </head>
 <body>
-    <input type="text" name="" id="name" placeholder="enter your name">
-    <input type="text" name="" id="email" placeholder="enter your email">
-    <select name="" id="city">
-        <option> -- select city --</option>
-        <option>mumbai</option>
-        <option>pune</option>
-    </select>
-   <button onclick="addNewRow()">Add New Row</button>
-   <section id="data-table-container">
-
-   </section>
    
-</body>
-<script>
-    document.getElementById("data-table-container").innerHTML = `<table>
+    <section>
+        <input id="fullname" type="text" placeholder="full name"/>
+        <input id="email" type="text" placeholder="email"/>
+        <input id="password" type="password" placeholder="password"/>
+        <input id="confirmPasword" type="text" placeholder="confirm password"/>
+        <input type="submit" onclick="handleSubmit()">
+        <button onclick="printData()">printData</button>
+    </section>
+     <table id="usertable">
         <tr>
             <th>name</th>
             <th>email</th>
-            <th>city</th>
+            <th>password</th>
         </tr>
-    </table>`
-    
-    // for(i=0;i<5;i++){
-    // var dataTable = document.getElementsByTagName("table")[0];
-    // dataTable.innerHTML = dataTable.innerHTML + `<tr>
-    //         <td>name</td>
-    //         <td>email</td>
-    //         <td>city</td>
-    //     </tr>`
-    // }
+    </table> 
+   
+</body>
+<script>
+   userdata = []
+  function handleSubmit(){
+    data = {}
+    data.name = fullname.value
+    data.email = email.value
+    data.password = password.value
+    // userdata.push(fullname.value)
+    // userdata.push(email.value)
+    userdata.push(data)
+  }
 
-    function addNewRow(){
-         var dataTable = document.getElementsByTagName("table")[0];
-         var name = document.getElementById("name").value
-         var email = document.getElementById("email").value
-         var city = document.getElementById("city").value
-        dataTable.innerHTML = dataTable.innerHTML + `<tr>
-            <td>${name}</td>
-            <td>${email}</td>
-            <td>${city}</td>
-        </tr>`
+  function printData(){
+    console.log(userdata)
+     
+    for(i=0;i<userdata.length;i++){
+
+         usertable.innerHTML = usertable.innerHTML +
+    `<tr>
+            <th>${userdata[i].name}</th>
+            <th>${userdata[i].email}</th>
+            <th>${userdata[i].password}</th>
+    </tr>
+    `
     }
 
+    
+  }
+
+
+
+
    
-
-
 </script>
 </html>
