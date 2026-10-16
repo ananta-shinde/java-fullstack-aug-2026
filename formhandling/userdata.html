@@ -4,31 +4,118 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 <body>
-    <label>Full name :</label>
-    <p id="fullname">
-
-    </p>
-    <label>Email :</label>
-    <p id="email">
-
-    </p>
-    <label>Password :</label>
-    <p id="password">
-
-    </p>
+    <section id="categoryList" class="d-flex gap-4 p-4">
+       
+    </section>
+   <section id="productList" class="p-5 d-flex flex-wrap gap-3 justify-content-center">
+      
+   </section>
 </body>
 <script>
 
+   const products = [
+    {
+        name:"iphone16",
+        category:"mobile",
+        brand : "apple",
+        price:500000,
+        image:"https://images-eu.ssl-images-amazon.com/images/I/71eUNTW+nJL._AC_UL165_SR165,165_.jpg",
+        description : "Highly secure mobile phone by apple",
+        rating:4.5
+    },
+    {
+        name:"iphone15",
+        category:"mobile",
+        brand : "apple",
+        image:"https://images-eu.ssl-images-amazon.com/images/I/71eUNTW+nJL._AC_UL165_SR165,165_.jpg",
+        price:400000,
+        description : "Highly secure mobile phone by apple",
+        rating:4.5
+    },
+    {
+        name:"SamsungS24",
+        category:"mobile",
+        brand : "Smasung",
+        image:"https://images-eu.ssl-images-amazon.com/images/I/71eUNTW+nJL._AC_UL165_SR165,165_.jpg",
+        price:400000,
+        description : "Highly secure mobile phone by samsmg",
+         rating:4
+    },
+    {
+        name:"SamsungULtra",
+        category:"mobile",
+        brand : "Samsung",
+        image:"https://images-eu.ssl-images-amazon.com/images/I/71eUNTW+nJL._AC_UL165_SR165,165_.jpg",
+        price:400000,
+        description : "Highly secure mobile phone by samsmg",
+        rating:4.8
+    },
+    {
+        name:"SamsungULtra",
+        category:"mobile",
+        brand : "Samsung",
+        image:"https://images-eu.ssl-images-amazon.com/images/I/71eUNTW+nJL._AC_UL165_SR165,165_.jpg",
+        price:400000,
+        description : "Highly secure mobile phone by samsmg",
+        rating:4.8
+    }
+   ]
+
+   const categories = [
+       {
+         name:"mobile",
+         description:""
+       },
+       {
+         name:"mobile",
+         description:""
+       },
+       {
+         name:"mobile",
+         description:""
+       },
+       {
+         name:"mobile",
+         description:""
+       },
+       {
+         name:"mobile",
+         description:""
+       }
+   ]
     
+   function loadData(){ 
+       for(i=0;i<products.length;i++){
+        productList.innerHTML =productList.innerHTML+ ` <div class="card text-center p-4" style="width: 17rem;">
+           <img src="${products[i].image}" />
+            <h4>${products[i].name}</h4>
+            <p>${products[i].description}</p>
+            <div class="d-flex justify-content-between">
+                <p>${products[i].brand}</p>
+                <p>${products[i].rating}</p>
+            </div>
+            <p>${products[i].price}</p>   
+       </div>`
+    }
+  }
 
-    var query = window.location.search
-    var formdata = new URLSearchParams(query)
-    console.log(formdata.get("fullname"))
+  function loadCategories(){
+      
+       for(i=0;i<categories.length;i++){
+             categoryList.innerHTML = categoryList.innerHTML +
+       ` <div class="card p-4 text-center">
+            <h4>${categories[i].name}</h4>
+        </div>
+       `
+       }
+  }
 
-    fullname.innerHTML = formdata.get("fullname")
-    email.innerHTML = formdata.get("email")
-    password.innerHTML = formdata.get("password")
+  loadData()
+  loadCategories()
+
+   
 </script>
 </html>
