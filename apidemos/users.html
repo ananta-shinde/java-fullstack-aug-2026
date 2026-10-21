@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User list</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+    <section class="p-4">
+        <table class="table border shadow w-75 m-auto">
+            <thead>
+                <tr>
+                    <th>name</th>
+                    <th>email</th>
+                    <th>dob</th>
+                    <th>contact</th>
+                </tr>
+            </thead>
+            <tbody id="userrows">
+                
+            </tbody>
+        </table>
+    </section>
+</body>
+<script>
+
+   async function loadusers(){
+    // hit an url(api) and get response
+      const response = await  fetch("https://dummyjson.com/users");
+      const data = await response.json();
+      const users = data.users;
+
+      for(i=0;i<users.length;i++){
+           userrows.innerHTML = userrows.innerHTML+
+           `<tr>
+                    <td>${users[i].firstName+" "+users[i].lastName}</td>
+                    <td>${users[i].email}</td>
+                    <td>${users[i].birthDate}</td>
+                    <td>${users[i].phone}</td>
+                </tr>
+           `
+      }
+
+    }
+
+
+    loadusers()
+</script>
+</html>
